@@ -1,6 +1,6 @@
 # Multi-Model LLM Fine-Tuning for Clinical Prediction
 
-Fine-tuning and comparing 5 Large Language Models (LLMs) for predicting manual removal of retained placenta using patient clinical data.
+An ongoing project of fine-tuning and comparing Large Language Models (LLMs) for predicting manual removal of retained placenta using patient clinical data.
 
 ## 📋 Overview
 
@@ -8,9 +8,13 @@ This repository contains code for fine-tuning multiple LLM models on Apple Silic
 
 **Task:** Predict whether a patient with retained placenta will require manual removal based on clinical features.
 
-## 🎯 Results Summary (Latest - October 2025)
+## Foundations of LLMs and Fine-Tuning
 
-**Latest Update:** Improved hyperparameters achieved breakthrough performance!
+**Large Language Models** are deep neural networks trained on vast text corpora to learn probabilistic mappings from input sequences (prompts) to output sequences (completions). At their core, LLMs perform next-token prediction using transformer architectures with billions of parameters, essentially learning high-dimensional probability distributions P(token|context) through maximum likelihood estimation on training data. Unlike traditional statistical models that require explicit feature engineering and assume specific functional forms (e.g., logistic regression's linear decision boundary), LLMs learn hierarchical representations automatically through multiple attention layers, making them highly flexible function approximators. However, this flexibility comes at a cost: pre-trained LLMs are optimized for general language tasks and may perform poorly on specialized domains like clinical prediction without adaptation.
+
+**Fine-tuning** addresses this by continuing the training process on domain-specific data, essentially performing transfer learning where the model's parameters are updated to minimize loss on the target task. In the context of tabular clinical prediction, we convert structured patient data (age, vitals, lab values) into natural language prompts and fine-tune the LLM to output classification decisions, leveraging the model's learned linguistic patterns to capture complex, non-linear relationships between features—analogous to how a generalized additive model learns smooth functions, but with far greater representational capacity. This approach is particularly relevant as LLMs have demonstrated strong performance on various structured prediction tasks, though as our results show (Llama-3.2-3B-v2: 57.6% accuracy vs Random Forest: 57.6%), they match but do not necessarily surpass well-tuned classical methods on small tabular datasets, suggesting that the choice between LLMs and traditional statistical models involves trade-offs in interpretability, computational cost, and sample efficiency.
+
+
 
 ### Fine-Tuned LLM Performance (v2 - Optimized)
 
@@ -18,7 +22,6 @@ This repository contains code for fine-tuning multiple LLM models on Apple Silic
 |-------|----------|----------|--------|-------------|-------------|
 | **Llama-3.2-3B-v2** 🏆 | **57.6%** | **70.6%** | **83.3%** | 17.4% | **65.9%** |
 
-**BREAKTHROUGH:** Llama-3.2-3B-v2 **matches Random Forest accuracy (57.6%)** and **beats RF on F1 score (70.6% vs 63.8%)**!
 
 ### Previous Results (v1 - Initial Training)
 
@@ -34,16 +37,10 @@ This repository contains code for fine-tuning multiple LLM models on Apple Silic
 
 | Model | Accuracy | F1 Score | Recall | Specificity |
 |-------|----------|----------|--------|-------------|
-| **Random Forest** ⭐ | **57.6%** | 63.8% | 61.1% | 52.2% |
-| **Llama-3.2-3B-v2** 🏆 | **57.6%** | **70.6%** | **83.3%** | 17.4% |
+| **Random Forest** | **57.6%** | 63.8% | 61.1% | 52.2% |
+| **Llama-3.2-3B-v2**  | **57.6%** | **70.6%** | **83.3%** | 17.4% |
 | LASSO | 50.8% | 52.5% | 44.4% | 60.9% |
 
-**Key Findings:**
-- 🏆 **Llama-3.2-3B-v2 MATCHES Random Forest accuracy (57.6%)**
-- 🎯 **Llama-3.2-3B-v2 BEATS Random Forest on F1 (70.6% vs 63.8%)**
-- 🔥 **Exceptional recall (83.3%)** - catches 30 out of 36 cases needing intervention
-- ✅ **Hyperparameter tuning was critical:** 2x LoRA rank (16), 1.7x learning rate (1.5e-6), 67% more iterations (1000)
-- 📊 **Trade-off:** Higher recall, lower specificity (screening-focused model)
 
 
 ## 🏗️ Repository Structure
@@ -54,15 +51,6 @@ This repository contains code for fine-tuning multiple LLM models on Apple Silic
 ├── requirements.txt                   # Python dependencies
 ├── model_configs.json                 # Model configurations
 │
-├── src/
-│   ├── rct_ft_single.py              # Single model fine-tuning script
-│   ├── multi_model_runner.py         # Multi-model orchestration
-│   ├── analyze_results.py            # Results analysis and visualization
-│   ├── reevaluate_fixed.py           # Re-evaluation with robust parsing
-│   └── diagnose_models.py            # Model output diagnostics
-│
-├── data/                              # Data directory (not included in repo)
-│   └── Trial 9/trial9.csv            # Clinical dataset (confidential)
 │
 ├── results/                           # Training results
 │   ├── combined_results_*.json       # Aggregated results
@@ -100,25 +88,6 @@ cd clinical-llm-comparison
 pip install -r requirements.txt
 ```
 
-### Run Single Model Test
-
-```bash
-# Test with one model first
-python src/multi_model_runner.py --models "Llama-3.2-3B"
-```
-
-### Run All Models
-
-```bash
-# Train all 5 models (6-8 hours)
-nohup python src/multi_model_runner.py > training.log 2>&1 &
-
-# Monitor progress
-bash scripts/check_progress.sh
-
-# Analyze results
-python src/analyze_results.py
-```
 
 ## 📊 Models Tested
 
