@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python diagnose_models.py:*)",
+      "Bash(python3:*)",
+      "Read(//Users/hongyiliu/Desktop/Research/collection/FA 26/Meeting 1024 TV/**)",
+      "Bash(chmod:*)",
+      "Bash(git rm:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

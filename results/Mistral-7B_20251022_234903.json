@@ -1,0 +1,66 @@
+{
+  "model_name": "Mistral-7B",
+  "model_id": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+  "output_dir": "./finetuned-mistral-7b",
+  "hyperparameters": {
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "learning_rate": 8e-07,
+    "num_iters": 600,
+    "batch_size": 2
+  },
+  "results": {
+    "baseline": {
+      "accuracy": 0.5254237288135594,
+      "precision": 0.6176470588235294,
+      "recall": 1.0,
+      "specificity": 0.0,
+      "f1": 0.7636363636363637,
+      "confusion": {
+        "tp": 21,
+        "tn": 0,
+        "fp": 13,
+        "fn": 0
+      }
+    },
+    "lasso": {
+      "accuracy": 0.5084745762711864,
+      "precision": 0.64,
+      "recall": 0.4444444444444444,
+      "specificity": 0.6086956521739131,
+      "f1": 0.5245901639344263,
+      "confusion": {
+        "tp": 16,
+        "tn": 14,
+        "fp": 9,
+        "fn": 20
+      }
+    },
+    "random_forest": {
+      "accuracy": 0.576271186440678,
+      "precision": 0.6666666666666666,
+      "recall": 0.6111111111111112,
+      "specificity": 0.5217391304347826,
+      "f1": 0.6376811594202898,
+      "confusion": {
+        "tp": 22,
+        "tn": 12,
+        "fp": 11,
+        "fn": 14
+      }
+    },
+    "finetuned": {
+      "accuracy": 0.5254237288135594,
+      "precision": 0.6666666666666666,
+      "recall": 0.4444444444444444,
+      "specificity": 0.6521739130434783,
+      "f1": 0.5333333333333333,
+      "confusion": {
+        "tp": 16,
+        "tn": 15,
+        "fp": 8,
+        "fn": 20
+      }
+    }
+  }
+}

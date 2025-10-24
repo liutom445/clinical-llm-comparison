@@ -1,0 +1,66 @@
+{
+  "model_name": "Phi-3-mini",
+  "model_id": "mlx-community/Phi-3-mini-4k-instruct-4bit",
+  "output_dir": "./finetuned-phi-3-mini",
+  "hyperparameters": {
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "learning_rate": 1e-06,
+    "num_iters": 600,
+    "batch_size": 4
+  },
+  "results": {
+    "baseline": {
+      "accuracy": 0.4576271186440678,
+      "precision": 1.0,
+      "recall": 0.1111111111111111,
+      "specificity": 1.0,
+      "f1": 0.19999999999999998,
+      "confusion": {
+        "tp": 4,
+        "tn": 23,
+        "fp": 0,
+        "fn": 32
+      }
+    },
+    "lasso": {
+      "accuracy": 0.5084745762711864,
+      "precision": 0.64,
+      "recall": 0.4444444444444444,
+      "specificity": 0.6086956521739131,
+      "f1": 0.5245901639344263,
+      "confusion": {
+        "tp": 16,
+        "tn": 14,
+        "fp": 9,
+        "fn": 20
+      }
+    },
+    "random_forest": {
+      "accuracy": 0.576271186440678,
+      "precision": 0.6666666666666666,
+      "recall": 0.6111111111111112,
+      "specificity": 0.5217391304347826,
+      "f1": 0.6376811594202898,
+      "confusion": {
+        "tp": 22,
+        "tn": 12,
+        "fp": 11,
+        "fn": 14
+      }
+    },
+    "finetuned": {
+      "accuracy": 0.5084745762711864,
+      "precision": 0.6296296296296297,
+      "recall": 0.4722222222222222,
+      "specificity": 0.5652173913043478,
+      "f1": 0.5396825396825397,
+      "confusion": {
+        "tp": 17,
+        "tn": 13,
+        "fp": 10,
+        "fn": 19
+      }
+    }
+  }
+}

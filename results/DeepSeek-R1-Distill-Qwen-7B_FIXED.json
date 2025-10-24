@@ -1,0 +1,22 @@
+{
+  "model_name": "DeepSeek-R1-Distill-Qwen-7B",
+  "model_id": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit",
+  "adapter_path": "./finetuned-deepseek-r1-qwen-7b",
+  "results": {
+    "finetuned": {
+      "accuracy": 0.3898305084745763,
+      "precision": 0.0,
+      "recall": 0.0,
+      "specificity": 1.0,
+      "f1": 0.0,
+      "confusion": {
+        "tp": 0,
+        "tn": 23,
+        "fp": 0,
+        "fn": 35
+      },
+      "parsed_rate": 0.9830508474576272
+    }
+  },
+  "note": "Re-evaluated with robust Yes/No extraction"
+}

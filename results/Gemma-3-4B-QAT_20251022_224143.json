@@ -1,0 +1,66 @@
+{
+  "model_name": "Gemma-3-4B-QAT",
+  "model_id": "mlx-community/gemma-3-4b-it-qat-4bit",
+  "output_dir": "./finetuned-gemma-3-4b-qat",
+  "hyperparameters": {
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "learning_rate": 9e-07,
+    "num_iters": 600,
+    "batch_size": 4
+  },
+  "results": {
+    "baseline": {
+      "accuracy": 0.4067796610169492,
+      "precision": 0.6,
+      "recall": 0.08333333333333333,
+      "specificity": 0.9130434782608695,
+      "f1": 0.14634146341463414,
+      "confusion": {
+        "tp": 3,
+        "tn": 21,
+        "fp": 2,
+        "fn": 33
+      }
+    },
+    "lasso": {
+      "accuracy": 0.5084745762711864,
+      "precision": 0.64,
+      "recall": 0.4444444444444444,
+      "specificity": 0.6086956521739131,
+      "f1": 0.5245901639344263,
+      "confusion": {
+        "tp": 16,
+        "tn": 14,
+        "fp": 9,
+        "fn": 20
+      }
+    },
+    "random_forest": {
+      "accuracy": 0.576271186440678,
+      "precision": 0.6666666666666666,
+      "recall": 0.6111111111111112,
+      "specificity": 0.5217391304347826,
+      "f1": 0.6376811594202898,
+      "confusion": {
+        "tp": 22,
+        "tn": 12,
+        "fp": 11,
+        "fn": 14
+      }
+    },
+    "finetuned": {
+      "accuracy": 0.423728813559322,
+      "precision": 0.5833333333333334,
+      "recall": 0.19444444444444445,
+      "specificity": 0.782608695652174,
+      "f1": 0.2916666666666667,
+      "confusion": {
+        "tp": 7,
+        "tn": 18,
+        "fp": 5,
+        "fn": 29
+      }
+    }
+  }
+}

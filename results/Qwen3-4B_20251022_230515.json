@@ -1,0 +1,66 @@
+{
+  "model_name": "Qwen3-4B",
+  "model_id": "mlx-community/Qwen3-4B-4bit",
+  "output_dir": "./finetuned-qwen3-4b",
+  "hyperparameters": {
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "learning_rate": 1e-06,
+    "num_iters": 600,
+    "batch_size": 4
+  },
+  "results": {
+    "baseline": {
+      "accuracy": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "specificity": 0.0,
+      "f1": 0.0,
+      "confusion": {
+        "tp": 0,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0
+      }
+    },
+    "lasso": {
+      "accuracy": 0.5084745762711864,
+      "precision": 0.64,
+      "recall": 0.4444444444444444,
+      "specificity": 0.6086956521739131,
+      "f1": 0.5245901639344263,
+      "confusion": {
+        "tp": 16,
+        "tn": 14,
+        "fp": 9,
+        "fn": 20
+      }
+    },
+    "random_forest": {
+      "accuracy": 0.576271186440678,
+      "precision": 0.6666666666666666,
+      "recall": 0.6111111111111112,
+      "specificity": 0.5217391304347826,
+      "f1": 0.6376811594202898,
+      "confusion": {
+        "tp": 22,
+        "tn": 12,
+        "fp": 11,
+        "fn": 14
+      }
+    },
+    "finetuned": {
+      "accuracy": 0.423728813559322,
+      "precision": 0.0,
+      "recall": 0.0,
+      "specificity": 0.0,
+      "f1": 0.0,
+      "confusion": {
+        "tp": 0,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0
+      }
+    }
+  }
+}

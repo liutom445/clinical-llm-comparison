@@ -1,0 +1,336 @@
+{
+  "timestamp": "2025-10-23T15:16:28.137476",
+  "total_time_seconds": 2937.5527889728546,
+  "models": [
+    {
+      "model_name": "Llama-3.2-3B",
+      "model_id": "mlx-community/Llama-3.2-3B-Instruct-4bit",
+      "output_dir": "./finetuned-llama-3.2-3B",
+      "hyperparameters": {
+        "lora_rank": 8,
+        "lora_alpha": 16,
+        "learning_rate": 9e-07,
+        "num_iters": 600,
+        "batch_size": 4
+      },
+      "results": {
+        "baseline": {
+          "accuracy": 0.3898305084745763,
+          "precision": 0.0,
+          "recall": 0.0,
+          "specificity": 1.0,
+          "f1": 0.0,
+          "confusion": {
+            "tp": 0,
+            "tn": 23,
+            "fp": 0,
+            "fn": 36
+          }
+        },
+        "lasso": {
+          "accuracy": 0.5084745762711864,
+          "precision": 0.64,
+          "recall": 0.4444444444444444,
+          "specificity": 0.6086956521739131,
+          "f1": 0.5245901639344263,
+          "confusion": {
+            "tp": 16,
+            "tn": 14,
+            "fp": 9,
+            "fn": 20
+          }
+        },
+        "random_forest": {
+          "accuracy": 0.576271186440678,
+          "precision": 0.6666666666666666,
+          "recall": 0.6111111111111112,
+          "specificity": 0.5217391304347826,
+          "f1": 0.6376811594202898,
+          "confusion": {
+            "tp": 22,
+            "tn": 12,
+            "fp": 11,
+            "fn": 14
+          }
+        },
+        "finetuned": {
+          "accuracy": 0.5423728813559322,
+          "precision": 0.6451612903225806,
+          "recall": 0.5555555555555556,
+          "specificity": 0.5217391304347826,
+          "f1": 0.5970149253731343,
+          "confusion": {
+            "tp": 20,
+            "tn": 12,
+            "fp": 11,
+            "fn": 16
+          }
+        }
+      }
+    },
+    {
+      "model_name": "Mistral-7B",
+      "model_id": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+      "output_dir": "./finetuned-mistral-7b",
+      "hyperparameters": {
+        "lora_rank": 8,
+        "lora_alpha": 16,
+        "learning_rate": 8e-07,
+        "num_iters": 600,
+        "batch_size": 2
+      },
+      "results": {
+        "baseline": {
+          "accuracy": 0.5254237288135594,
+          "precision": 0.6176470588235294,
+          "recall": 1.0,
+          "specificity": 0.0,
+          "f1": 0.7636363636363637,
+          "confusion": {
+            "tp": 21,
+            "tn": 0,
+            "fp": 13,
+            "fn": 0
+          }
+        },
+        "lasso": {
+          "accuracy": 0.5084745762711864,
+          "precision": 0.64,
+          "recall": 0.4444444444444444,
+          "specificity": 0.6086956521739131,
+          "f1": 0.5245901639344263,
+          "confusion": {
+            "tp": 16,
+            "tn": 14,
+            "fp": 9,
+            "fn": 20
+          }
+        },
+        "random_forest": {
+          "accuracy": 0.576271186440678,
+          "precision": 0.6666666666666666,
+          "recall": 0.6111111111111112,
+          "specificity": 0.5217391304347826,
+          "f1": 0.6376811594202898,
+          "confusion": {
+            "tp": 22,
+            "tn": 12,
+            "fp": 11,
+            "fn": 14
+          }
+        },
+        "finetuned": {
+          "accuracy": 0.5254237288135594,
+          "precision": 0.6666666666666666,
+          "recall": 0.4444444444444444,
+          "specificity": 0.6521739130434783,
+          "f1": 0.5333333333333333,
+          "confusion": {
+            "tp": 16,
+            "tn": 15,
+            "fp": 8,
+            "fn": 20
+          }
+        }
+      }
+    },
+    {
+      "model_name": "Phi-3-mini",
+      "model_id": "mlx-community/Phi-3-mini-4k-instruct-4bit",
+      "output_dir": "./finetuned-phi-3-mini",
+      "hyperparameters": {
+        "lora_rank": 8,
+        "lora_alpha": 16,
+        "learning_rate": 1e-06,
+        "num_iters": 600,
+        "batch_size": 4
+      },
+      "results": {
+        "baseline": {
+          "accuracy": 0.4576271186440678,
+          "precision": 1.0,
+          "recall": 0.1111111111111111,
+          "specificity": 1.0,
+          "f1": 0.19999999999999998,
+          "confusion": {
+            "tp": 4,
+            "tn": 23,
+            "fp": 0,
+            "fn": 32
+          }
+        },
+        "lasso": {
+          "accuracy": 0.5084745762711864,
+          "precision": 0.64,
+          "recall": 0.4444444444444444,
+          "specificity": 0.6086956521739131,
+          "f1": 0.5245901639344263,
+          "confusion": {
+            "tp": 16,
+            "tn": 14,
+            "fp": 9,
+            "fn": 20
+          }
+        },
+        "random_forest": {
+          "accuracy": 0.576271186440678,
+          "precision": 0.6666666666666666,
+          "recall": 0.6111111111111112,
+          "specificity": 0.5217391304347826,
+          "f1": 0.6376811594202898,
+          "confusion": {
+            "tp": 22,
+            "tn": 12,
+            "fp": 11,
+            "fn": 14
+          }
+        },
+        "finetuned": {
+          "accuracy": 0.5084745762711864,
+          "precision": 0.6296296296296297,
+          "recall": 0.4722222222222222,
+          "specificity": 0.5652173913043478,
+          "f1": 0.5396825396825397,
+          "confusion": {
+            "tp": 17,
+            "tn": 13,
+            "fp": 10,
+            "fn": 19
+          }
+        }
+      }
+    },
+    {
+      "model_name": "Llama-3.1-8B",
+      "model_id": "mlx-community/Meta-Llama-3.1-8B-Instruct-4bit",
+      "output_dir": "./finetuned-llama-3.1-8B",
+      "hyperparameters": {
+        "lora_rank": 8,
+        "lora_alpha": 16,
+        "learning_rate": 8e-07,
+        "num_iters": 600,
+        "batch_size": 2
+      },
+      "results": {
+        "baseline": {
+          "accuracy": 0.3898305084745763,
+          "precision": 0.0,
+          "recall": 0.0,
+          "specificity": 1.0,
+          "f1": 0.0,
+          "confusion": {
+            "tp": 0,
+            "tn": 23,
+            "fp": 0,
+            "fn": 36
+          }
+        },
+        "lasso": {
+          "accuracy": 0.5084745762711864,
+          "precision": 0.64,
+          "recall": 0.4444444444444444,
+          "specificity": 0.6086956521739131,
+          "f1": 0.5245901639344263,
+          "confusion": {
+            "tp": 16,
+            "tn": 14,
+            "fp": 9,
+            "fn": 20
+          }
+        },
+        "random_forest": {
+          "accuracy": 0.576271186440678,
+          "precision": 0.6666666666666666,
+          "recall": 0.6111111111111112,
+          "specificity": 0.5217391304347826,
+          "f1": 0.6376811594202898,
+          "confusion": {
+            "tp": 22,
+            "tn": 12,
+            "fp": 11,
+            "fn": 14
+          }
+        },
+        "finetuned": {
+          "accuracy": 0.4745762711864407,
+          "precision": 0.6666666666666666,
+          "recall": 0.2777777777777778,
+          "specificity": 0.782608695652174,
+          "f1": 0.39215686274509803,
+          "confusion": {
+            "tp": 10,
+            "tn": 18,
+            "fp": 5,
+            "fn": 26
+          }
+        }
+      }
+    },
+    {
+      "model_name": "Qwen2.5-7B",
+      "model_id": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+      "output_dir": "./finetuned-qwen2.5-7B",
+      "hyperparameters": {
+        "lora_rank": 8,
+        "lora_alpha": 16,
+        "learning_rate": 8e-07,
+        "num_iters": 600,
+        "batch_size": 2
+      },
+      "results": {
+        "baseline": {
+          "accuracy": 0.3559322033898305,
+          "precision": 0.0,
+          "recall": 0.0,
+          "specificity": 0.9130434782608695,
+          "f1": 0.0,
+          "confusion": {
+            "tp": 0,
+            "tn": 21,
+            "fp": 2,
+            "fn": 36
+          }
+        },
+        "lasso": {
+          "accuracy": 0.5084745762711864,
+          "precision": 0.64,
+          "recall": 0.4444444444444444,
+          "specificity": 0.6086956521739131,
+          "f1": 0.5245901639344263,
+          "confusion": {
+            "tp": 16,
+            "tn": 14,
+            "fp": 9,
+            "fn": 20
+          }
+        },
+        "random_forest": {
+          "accuracy": 0.576271186440678,
+          "precision": 0.6666666666666666,
+          "recall": 0.6111111111111112,
+          "specificity": 0.5217391304347826,
+          "f1": 0.6376811594202898,
+          "confusion": {
+            "tp": 22,
+            "tn": 12,
+            "fp": 11,
+            "fn": 14
+          }
+        },
+        "finetuned": {
+          "accuracy": 0.4406779661016949,
+          "precision": 0.5882352941176471,
+          "recall": 0.2777777777777778,
+          "specificity": 0.6956521739130435,
+          "f1": 0.3773584905660377,
+          "confusion": {
+            "tp": 10,
+            "tn": 16,
+            "fp": 7,
+            "fn": 26
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "model_name": "Qwen3-4B",
+  "model_id": "mlx-community/Qwen3-4B-4bit",
+  "adapter_path": "./finetuned-qwen3-4b",
+  "results": {
+    "finetuned": {
+      "accuracy": 0.423728813559322,
+      "precision": 0.5555555555555556,
+      "recall": 0.2777777777777778,
+      "specificity": 0.6521739130434783,
+      "f1": 0.3703703703703704,
+      "confusion": {
+        "tp": 10,
+        "tn": 15,
+        "fp": 8,
+        "fn": 26
+      },
+      "parsed_rate": 1.0
+    }
+  },
+  "note": "Re-evaluated with robust Yes/No extraction"
+}

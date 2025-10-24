@@ -1,0 +1,84 @@
+{
+  "models": [
+    {
+      "name": "Llama-3.2-3B-v2",
+      "model_id": "mlx-community/Llama-3.2-3B-Instruct-4bit",
+      "output_dir": "./finetuned-llama-3.2-3B-v2",
+      "lora_rank": 16,
+      "lora_alpha": 32,
+      "learning_rate": 1.5e-6,
+      "num_iters": 1000,
+      "batch_size": 4
+    },
+    {
+      "name": "Phi-3-mini-v2",
+      "model_id": "mlx-community/Phi-3-mini-4k-instruct-4bit",
+      "output_dir": "./finetuned-phi-3-mini-v2",
+      "lora_rank": 16,
+      "lora_alpha": 32,
+      "learning_rate": 2e-6,
+      "num_iters": 1000,
+      "batch_size": 4
+    },
+    {
+      "name": "Llama-3.1-8B-v2",
+      "model_id": "mlx-community/Meta-Llama-3.1-8B-Instruct-4bit",
+      "output_dir": "./finetuned-llama-3.1-8B-v2",
+      "lora_rank": 16,
+      "lora_alpha": 32,
+      "learning_rate": 2e-6,
+      "num_iters": 1200,
+      "batch_size": 2
+    },
+    {
+      "name": "Qwen2.5-7B-v2",
+      "model_id": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+      "output_dir": "./finetuned-qwen2.5-7B-v2",
+      "lora_rank": 16,
+      "lora_alpha": 32,
+      "learning_rate": 2e-6,
+      "num_iters": 1200,
+      "batch_size": 2
+    },
+    {
+      "name": "Gemma-2-9B",
+      "model_id": "mlx-community/gemma-2-9b-it-4bit",
+      "output_dir": "./finetuned-gemma-2-9b",
+      "lora_rank": 16,
+      "lora_alpha": 32,
+      "learning_rate": 1.5e-6,
+      "num_iters": 1000,
+      "batch_size": 2
+    },
+    {
+      "name": "Phi-3.5-mini",
+      "model_id": "mlx-community/Phi-3.5-mini-instruct-4bit",
+      "output_dir": "./finetuned-phi-3.5-mini",
+      "lora_rank": 16,
+      "lora_alpha": 32,
+      "learning_rate": 2e-6,
+      "num_iters": 1000,
+      "batch_size": 4
+    },
+    {
+      "name": "Qwen2.5-3B",
+      "model_id": "mlx-community/Qwen2.5-3B-Instruct-4bit",
+      "output_dir": "./finetuned-qwen2.5-3B",
+      "lora_rank": 16,
+      "lora_alpha": 32,
+      "learning_rate": 2e-6,
+      "num_iters": 1000,
+      "batch_size": 4
+    }
+  ],
+  "common_config": {
+    "data_path": "Trial 9/trial9.csv",
+    "train_ratio": 0.80,
+    "val_ratio": 0.10,
+    "test_ratio": 0.10,
+    "random_seed": 42,
+    "use_balanced_sampling": true,
+    "steps_per_eval": 50,
+    "steps_per_report": 50
+  }
+}
