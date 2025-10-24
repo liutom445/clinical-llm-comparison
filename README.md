@@ -16,9 +16,13 @@ This repository contains code for fine-tuning multiple LLM models on Apple Silic
 
 Huggingface: [https://huggingface.co/] is a good place to look at for open sourced LLMs. 
 
+Here are the metrics we use for comparisons: 
 
+Recall (Sensitivity, TPR): How many actual positives you correctly catch; High recall means few misses.
 
+Specificity (TNR): How many actual negatives you correctly reject; High specificity means few false alarms.
 
+F1 Score: Harmonic mean of precision and recall, rewarding balance. 
 
 ### Fine-Tuned LLM Performance (v2 - Optimized)
 
